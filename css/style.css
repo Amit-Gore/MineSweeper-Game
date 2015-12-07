@@ -1,0 +1,29 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.letter-box{
+  margin: 0px;
+  box-shadow: 0px 0px 0px 1px grey inset;
+  border : 1px solid #e6e6e6;
+}
+.mt50{
+    margin-top: 50px;
+}
+.m10{
+    margin: 0px;
+    box-shadow: 0px 0px 0px 1px grey inset;
+    border : 1px solid #e6e6e6;
+}
+
+.m-t-10{
+    margin-top: 10px;
+}
+
+.outer{
+    width: 500px;
+    height:500px;
+    padding: 25px;
+    border: 25px solid navy;
+    margin: 25px;
+}

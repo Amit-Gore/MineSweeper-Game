@@ -1,0 +1,71 @@
+<html ng-app="myApp">
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Getting Started With ngGrid Example</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+   <!--<script type="text/javascript" src="jquery-1.11.1.min.js"></script>-->
+    <script type="text/javascript" src="angular.js"></script>
+
+
+</head>
+
+<body ng-controller="MyCtrl" class="container m-t-10" id="gridSection" >
+    
+            <!--<div class="row">-->
+    <h4 class="text-center" ng-show="start_clicked"> No of Attempts Remaining  : {{attempts}} </h4>
+    <div class="row" ng-show="!start_clicked">
+        <div class="col-md-5 col-centered text-center">
+
+            <hr>
+            <form class="form-horizontal" role="form" ng-show="!start_clicked">
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="grids">Grids:</label>
+                    <div class="col-sm-8"> 
+                    <input type="number" class="form-control" ng-model="tablesize" id="grids"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="cells">Colored Cells:</label>
+                    <div class="col-sm-8"> 
+                    <input type="number" class="form-control" ng-model="tobeColored" id="cells"></div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="lives">Lives:</label>
+                    <div class="col-sm-8"> 
+                    <input type="number" class="form-control" ng-model="attempts" id="lives"></div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4"  for="time">Time(Secs):</label>
+                    <div class="col-sm-8"> 
+                        <input type="number" class="form-control" ng-model="time" id="time">
+                    </div>
+                </div> 
+
+                <button class="btn btn-primary btn-xl text-center" type="submit" ng-click="resizeGrids();startGame()" ng-show="!start_clicked" id="start">Start</button>
+            </form>
+        </div>
+    </div>
+    
+    <!--<div class="row "  >
+        <div class="col-lg-6 col-lg-offset-3 text-center"id="gridSection">-->
+    <div ng-show="start_clicked" >
+        <hr>
+        <div class="col-md-12 text-center" ng-repeat="i in getSize(tablesize) track by $index">
+            <div class="m10  " ng-repeat="cell in getSize(tablesize) track by $index" ng-click="uncolor($index+($parent.$index)*tablesize)" id={{$index+($parent.$index)*tablesize}} ng-style="{'width':cellwidth+'%' ,'height' :cellheight+'%','display':'inline-block' }">
+                <!--<div><b>Block : {{$index+($parent.$index)*tablesize + 1}}</b></div>-->
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr><hr><hr>
+    </div>
+    <!--</div>
+        
+    </div>-->
+</body>
+<script type="text/javascript" src="main.js"></script>
+
+</html>
